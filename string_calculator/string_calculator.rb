@@ -21,7 +21,12 @@ class StringCalculator
   end
 
   def delimiters_from_input(delimiter_part)
-    [FIXED_DELIMITER, delimiter_part ? delimiter_part : DEFAULT_DELIMITER]
+    [FIXED_DELIMITER, delimiter_part ? extract_delimiters(delimiter_part) : DEFAULT_DELIMITER].flatten
+  end
+
+  def extract_delimiters(delimiter_part)
+    delimiters = delimiter_part.scan(/\[([^\]]+)\]/).flatten
+    delimiters.any? ? delimiters : delimiter_part
   end
 
   def remove_numbers_major_1000(numbers)

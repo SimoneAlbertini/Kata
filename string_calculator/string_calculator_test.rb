@@ -42,13 +42,17 @@ class StringCalculatorTest < Test::Unit::TestCase
 		expect_adding '1,1000,2,1001', result: 1003
 	end
 
-	# def test_delimiters_any_length
-	# 	expect_adding '//[*p*]\n1*p*2', result: 3
-	# end
-  #
-	# def test_multiple_delimiters
-	# 	expect_adding '//[*][%]\n1*2%3', result: 6
-	# end
+	def test_delimiters_any_length
+		expect_adding "//[*p*]\n1*p*2", result: 3
+	end
+
+	def test_multiple_delimiters
+		expect_adding "//[*][%]\n1*2%3", result: 6
+		end
+
+	def test_multiple_delimiters_any_length
+		expect_adding "//[**][%%%]\n1**2%%%3", result: 6
+	end
 
 	private
 
