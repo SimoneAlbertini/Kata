@@ -45,7 +45,3 @@ describe Checkout do
     co.total
   end
 end
-
-  # def test_totals
-  #   assert_equal(175, price("AAABB"))
-  # end
