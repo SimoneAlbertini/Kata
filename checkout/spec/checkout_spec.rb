@@ -31,6 +31,10 @@ describe Checkout do
     expect(price_for 'AAA').to be 130
   end
 
+  it "should discount twice for 6x A items" do
+    expect(price_for 'AAAAAA').to be 260
+  end
+
   it "should discount 2x B items" do
     expect(price_for 'BBB').to be 75
   end
