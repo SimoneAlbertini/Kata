@@ -5,24 +5,37 @@ class BowlingGame
   end
 
   def roll(score)
-    if @frames.any? && @frames.last.size < 2
+    if @frames.any? && is_second_roll_of_frame
       @frames.last << score
     else
-      @frames << [score]
+      @frames << (score == 10? [score, 0] : [score])
     end
   end
 
   def score
     @frames.each_with_index.inject(0) do |score, (current_frame, i)|
-      score += current_frame[0] + current_frame[1]
-      score += is_spare?(current_frame)? @frames[i.succ][0] : 0
+      score += pins_hit_in current_frame
+      score += is_spare?(current_frame)? @frames[i.succ].first : 0
+      score += is_strike?(current_frame)? pins_hit_in(@frames[i.succ]) : 0
     end
   end
 
   private
 
   def is_spare?(frame)
-    frame.size == 2 && (frame[0] + frame[1]) == 10
+    !is_strike?(frame) && (pins_hit_in frame) == 10
+  end
+
+  def pins_hit_in(frame)
+    frame[0] + frame[1]
+  end
+
+  def is_strike?(frame)
+    frame[0] == 10
+  end
+
+  def is_second_roll_of_frame
+    @frames.last.size < 2
   end
 
 end

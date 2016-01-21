@@ -22,7 +22,7 @@ describe BowlingGame do
   it 'should count one strike' do
     roll 10,3,4
     16.times { roll 0 }
-    expect(@game.score).to be 17
+    expect(@game.score).to be 24
   end
 
   def roll(*pins)
