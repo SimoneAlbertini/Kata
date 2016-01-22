@@ -14,16 +14,27 @@ describe BowlingGame do
   end
 
   it 'should count one spare' do
-    roll 5,5,3
+    roll 5, 5, 3
     17.times { roll 0 }
     expect(@game.score).to be 16
   end
 
   it 'should count one strike' do
-    roll 10,3,4
+    roll 10, 3, 4
     16.times { roll 0 }
     expect(@game.score).to be 24
   end
+
+  # it 'should count subsequent strikes' do
+  #   roll 10, 10, 3, 4
+  #   14.times { roll 0 }
+  #   expect(@game.score).to be 47
+  # end
+
+  # it 'should score a perfect game!' do
+  #   12.times { roll 10 }
+  #   expect(@game.score).to be 300
+  # end
 
   def roll(*pins)
     pins.each { |p| @game.roll p }
