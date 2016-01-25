@@ -25,7 +25,7 @@ describe FizzBuzz do
     expect(fizz_buzz_of 28).to eq 'BANG'
   end
 
-  it ' should return FIZZBUZZBANG if multiple of 3, 5 and 7' do
+  it 'should return FIZZBUZZBANG if multiple of 3, 5 and 7' do
     expect(fizz_buzz_of 105).to eq 'FIZZBUZZBANG'
   end
 
