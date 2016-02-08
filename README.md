@@ -16,3 +16,6 @@ PDF versioned in bowling_game folder
 The well known FizzBuzz Kata (http://codingdojo.org/cgi-bin/index.pl?KataFizzBuzz ) with the BANG (if multiple of 7).
 
 Using responsability chain to handle the 'combinatorial explosion' of adding rules linearly.
+
+## Prime Factors
+From Uncle Bob: http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata
