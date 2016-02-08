@@ -31,6 +31,10 @@ describe PrimeFactor do
     assert_prime_factors_for 9, are: [3,3]
   end
 
+  it 'should return prime factors of 24' do
+    assert_prime_factors_for 24, are: [2,2,2,3]
+  end
+
   it 'should return prime factors of 30' do
     assert_prime_factors_for 30, are: [2,3,5]
   end
