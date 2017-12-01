@@ -17,5 +17,8 @@ The well known FizzBuzz Kata (http://codingdojo.org/cgi-bin/index.pl?KataFizzBuz
 
 Using responsability chain to handle the 'combinatorial explosion' of adding rules linearly.
 
+##  FizzBuzz OCP Kata
+Fizzbuzz Kata developed strictly following the Open/Clone principle.
+
 ## Prime Factors
 From Uncle Bob: http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata
